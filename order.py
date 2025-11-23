@@ -1,2 +1,2 @@
-class Oder:
+class Order:
     pass
