@@ -1,7 +1,6 @@
 class Customer:
     def __init__(self, name):
-        self._name = None
-        self.name =name
+        self.name =name  # for the setter methode
 
 
     @property
@@ -10,10 +9,14 @@ class Customer:
     
     @name.setter
     def name(self, name):
-        if isinstance(name, str) and 1 <= len(name) <= 15:
-            self._name= name
+        #the validation takes two steps "string" of char "1 amd 15" i thought of combining thye cheker to a block but the user wont know what faile === no clarity hence the two validators.
+        if not isinstance(name, str):
+            raise ValueError("Customer name must be a string between 1 and 15 characters.")
 
-        else:
-            print(f"invalid name: {name}, The name should be of 1 to 15 characters long, please try again")
+        if not (1 <= len(name) <= 15):
+            raise ValueError("Customer name must be a string between 1 and 15 characters.")
+
+        self._name = name
+
 
     
