@@ -1,18 +1,21 @@
 class Coffee:
-    def __init__(self, name ):
-        self._name = None
-        self.name = name
+    def __init__(self, coffee_name ):
+        self.coffee_name = coffee_name # for the setter:
 
     @property
-    def name(self):
-        return self._name
+    def coffee_name(self):
+        return self._coffee_name
     
 
-    @name.setter
-    def name(self, name):
-        if isinstance(name, str) and len(name) >3:
-            self._name = name
-        else:
-            print(f"invalid name:{name}, The name should be more than 3 char long")
+    @coffee_name.setter
+    def coffee_name(self, coffee_name):
+        # again same brains ...validation be clear ..whats failing stirng or char
+        if not isinstance(coffee_name, str):
 
+            raise ValueError(f"The name: {coffee_name} must be a string")
+        
+        if not len(coffee_name) >3:
+            raise ValueError(f"the name: {coffee_name} must be of more than 3 char")
+        
+        self._coffee_name = coffee_name
     
