@@ -1,8 +1,19 @@
+from customer import Customer
+from coffee import Coffee
+
 class Order:
+    all_orders = []
+    
     def __init__(self, customer, coffee, price):
         self.customer = customer
         self.coffee = coffee
         self.price = price
+
+        customer._add_order(self)
+        coffee._add_order(self)
+
+        # Append order to type class level list
+        Order.all_orders.append(self)
 
     @property
     def customer(self):
@@ -10,7 +21,6 @@ class Order:
 
     @customer.setter
     def customer(self, customer_object):
-        from customer import Customer
         if not isinstance(customer_object, Customer):
             raise TypeError("Order customer must be a Customer instance.")
         self._customer = customer_object
@@ -18,10 +28,10 @@ class Order:
     @property
     def coffee(self):
         return self._coffee
+    
 
     @coffee.setter
     def coffee(self, coffee_object):
-        from coffee import Coffee
         if not isinstance(coffee_object, Coffee):
             raise TypeError("Order coffee must be a Coffee instance.")
         self._coffee = coffee_object

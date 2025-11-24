@@ -1,6 +1,12 @@
+from coffee import Coffee
+from customer import Customer
+
 class Customer:
+    all_customers = []
     def __init__(self, name):
         self.name =name  # for the setter methode
+        self._oders = []  # to hold the orders of the customer
+        Customer.all_customers.append(self)
 
 
     @property

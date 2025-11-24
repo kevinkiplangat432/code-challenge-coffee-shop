@@ -1,3 +1,6 @@
+from order import Order
+from customer import Customer
+
 class Coffee:
     def __init__(self, coffee_name ):
         self.coffee_name = coffee_name # for the setter:
@@ -19,3 +22,6 @@ class Coffee:
         
         self._coffee_name = coffee_name
     
+
+    def _add_order(self, order):
+        pass
