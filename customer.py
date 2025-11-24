@@ -27,6 +27,15 @@ class Customer:
 
 
     
+    #   - `orders()` method returns a list of all `Order` instances for that customer.
+    #    - `coffees()` method returns a unique list of `Coffee` instances that the customer has ordered.
 
+    def orders(self):
+        # i returned a copy of the list so that the original is not touched.
+        return list(self._orders)
 
+    def coffees(self):
+        #sets to clear out dups
+        unique_list = {order.coffee for order in self._orders}
+        return list(unique_list)
     
