@@ -31,10 +31,10 @@ class Order:
         return self._price
 
     @price.setter
-    def price(self, price_object):
-        if not isinstance(price_object, (int, float)):
+    def price(self, price):
+        if not isinstance(price, (int, float)):
             raise TypeError("Price must be a number.")
-        if not (1.0 <= float(price_object) <= 10.0):
+        if not (1.0 <= float(price) <= 10.0):
             raise ValueError("Price must be between 1.0 and 10.0.")
 
-        self._price = float(price_object)
+        self._price = float(price)
