@@ -1,5 +1,3 @@
-from coffee import Coffee
-from customer import Customer
 
 class Customer:
     all_customers = []
@@ -25,10 +23,8 @@ class Customer:
 
         self._name = name
 
-
-    
-    #   - `orders()` method returns a list of all `Order` instances for that customer.
-    #    - `coffees()` method returns a unique list of `Coffee` instances that the customer has ordered.
+    def _add_order(self, order):
+        self._orders.append(order)
 
     def orders(self):
         # i returned a copy of the list so that the original is not touched.
@@ -38,4 +34,31 @@ class Customer:
         #sets to clear out dups
         unique_list = {order.coffee for order in self._orders}
         return list(unique_list)
+    
+    def create_order(self,coffee, price):
+        from order import Order
+        return Order(self, coffee, price)
+    
+    @classmethod
+    def most_aficionado(cls, coffee):
+        # validate it is a coffee instanxce
+        from coffee import Coffee
+        if not isinstance(coffee, Coffee):
+            raise TypeError("Expected a Coffee instance.")
+        
+        # check if no orders
+        if not coffee.orders():
+            return None
+        else:
+            max_spent = 0
+            top_customer = None
+            for customer in cls.all_customers:
+                spent = sum(order.price for order in customer.orders() if order.coffee == coffee)
+                if spent > max_spent:
+                    max_spent = spent
+                    top_customer = customer
+        return top_customer
+
+
+
     

@@ -1,10 +1,7 @@
-from order import Order
-from customer import Customer
-
 class Coffee:
     def __init__(self, coffee_name ):
         self.coffee_name = coffee_name # for the setter:
-
+        self._orders = []
     @property
     def coffee_name(self):
         return self._coffee_name
@@ -17,7 +14,7 @@ class Coffee:
 
             raise ValueError(f"The name: {coffee_name} must be a string")
         
-        if not len(coffee_name) >3:
+        if not len(coffee_name) < 3:
             raise ValueError(f"the name: {coffee_name} must be of more than 3 char")
         
         self._coffee_name = coffee_name
@@ -36,4 +33,16 @@ class Coffee:
         unique_list = {order.customer for order in self._orders}
         #return a list
         return list(unique_list)
+    
+
+    
+    def num_orders(self):
+        return len(self._orders)
+
+    def average_price(self):
+        if not self._orders:
+            return 0.00
+        else:
+            total = sum(order.price for order in self._orders)
+            return total / len(self._orders)
     
