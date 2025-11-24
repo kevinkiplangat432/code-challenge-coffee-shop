@@ -1,9 +1,9 @@
-Coffee Shop Domain Model
+# Coffee Shop Domain Model
 
 A Python domain model representing a Coffee Shop with Customers, Coffees, and Orders.
 This project demonstrates object-oriented programming, relationships, aggregation, and class methods in Python.
 
-Overview
+### Overview
 
 This project models a simple Coffee Shop domain using Python classes:
 
@@ -23,38 +23,39 @@ An Order belongs to one Customer and one Coffee.
 
 The Order class acts as the single source of truth for all relationships.
 
-Features
+### Features
 
-Fully validated Customer and Coffee names.
+1. Fully validated Customer and Coffee names.
 
-Price validation for Orders.
+2. Price validation for Orders.
 
-Many-to-many relationships implemented through Order.
+3. Many-to-many relationships implemented through Order.
 
-Aggregate methods:
+4. Aggregate methods:
 
-Customer: list of coffees ordered
+5. Customer: list of coffees ordered
 
-Coffee: total orders, average price
+6. Coffee: total orders, average price
 
-Class method most_aficionado(coffee) to identify the customer who spent the most on a given coffee.
+7. Class method most_aficionado(coffee) to identify the customer who spent the most on a given coffee.
 
-Encapsulation and defensive copying for safe object state management.
+8. Encapsulation and defensive copying for safe object state management.
 
 Project Structure
 coffee_shop/
 │
-├── customer.py      # Customer class with orders, coffees, and most_aficionado
-├── coffee.py        # Coffee class with orders, customers, and aggregates
-├── order.py         # Order class linking Customer, Coffee, and price
-├── README.md        # This file
-└── tests/           # Optional: unit tests using pytest
+├── customer.py
+├── coffee.py
+├── order.py
+├── README.md
+└── tests/
 
-Installation
+## Installation
 
-Clone the repository:
+##### Clone the repository:
 
-git clone <YOUR_REPO_LINK_HERE>
+**git clone https://github.com/kevinkiplangat432/code-challenge-coffee-shop.git**
+
 cd coffee_shop
 
 
@@ -67,14 +68,6 @@ pipenv shell
 Install pytest for testing:
 
 pipenv install pytest
-
-Usage
-
-Import your classes:
-
-from customer import Customer
-from coffee import Coffee
-from order import Order
 
 
 Create objects:
