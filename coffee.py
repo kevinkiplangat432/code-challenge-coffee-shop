@@ -24,4 +24,9 @@ class Coffee:
     
 
     def _add_order(self, order):
-        pass
+        self._orders.append(order)
+
+    def orders(self):
+        return self._orders
+    
+    
