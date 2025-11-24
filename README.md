@@ -87,51 +87,6 @@ print(kevin.coffees())
 print(latte.num_orders())
 print(latte.average_price())
 
-# Most aficionado
-print(Customer.most_aficionado(latte))
-
-Class Descriptions
-Customer
-
-name – validated string (1–15 chars)
-
-_orders – internal list of Order objects
-
-Methods:
-
-orders() – returns all orders for the customer
-
-coffees() – returns unique list of Coffee instances
-
-create_order(coffee, price) – creates a new order
-
-most_aficionado(coffee) – class method identifying top spender for a coffee
-
-Coffee
-
-name – validated string (min 3 chars)
-
-_orders – internal list of Order objects
-
-Methods:
-
-orders() – list of all orders for this coffee
-
-customers() – unique list of customers who ordered
-
-num_orders() – total orders
-
-average_price() – average price of orders
-
-Order
-
-customer – Customer instance
-
-coffee – Coffee instance
-
-price – validated float (1.0–10.0)
-
-Testing
 
 Run all tests using pytest:
 
@@ -139,7 +94,7 @@ pytest tests/
 
 License
 MIT License
- – replace with your license.
+The license grants permission, free of charge, to any person obtaining a copy of the software and documentation files to deal in the Software without restriction, including the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies. All copies must include the copyright notice and license text. The software is provided "as is" without warranty, and the authors are not liable for claims, damages, or other liability. WVU Libraries libguides.wvu.edu/c.php?g=1260463&p=9239106 choosealicense.com 
 
 Contributing
 
