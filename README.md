@@ -102,10 +102,5 @@ Contributions are welcome!
 
 Fork the repository
 
-Create a feature branch
-
-Submit a pull request
-
-Repository Link
-
-Your Repository Here
+## Author
+Kevin kiplangat;

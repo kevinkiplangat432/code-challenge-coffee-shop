@@ -13,7 +13,7 @@ class Customer:
     
     @name.setter
     def name(self, name):
-        #the validation takes two steps "string" of char "1 amd 15" i thought of combining thye cheker to a block but the user wont know what faile === no clarity hence the two validators.
+        #the validation takes two steps "string" of char "1 amd 15" i thought of combining thye cheker to a block but the user wont know what failed = no clarity hence the two validators.
         if not isinstance(name, str):
 
             raise ValueError("Customer name must be a string between 1 and 15 char.")
